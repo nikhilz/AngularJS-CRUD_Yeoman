@@ -1,0 +1,42 @@
+<div>
+    <acme-navbar></acme-navbar>
+</div>
+<div class="container" style="width:50%">
+    <table class="table">
+        <tr>
+            <td>Email ID:</td>
+            <td><input type="email" class="form-control" name=emailId ng-model="emailId" value="{{emailId}}" disabled="disTextbox"></td>
+        </tr>
+        <tr>
+            <td>Mobile No:</td>
+            <td><input type="text" class="form-control" name=mobile ng-model="mobile" value="{{mobile}}" disabled="disTextbox"></td>
+        </tr>
+        <tr>
+            <td>D.O.B</td>
+            <td><input type="date" class="form-control" name=dob ng-model="dob" value="{{dob}}" disabled="disTextbox"></td>
+        </tr>
+    </table>
+    <input type="button"  class="btn btn-primary" ng-click="addUser()" value="Save User">
+    <br>
+    <br>
+<table class="table table-bordered table-white spacer5">
+                        <tr>
+                            <th>Email ID</th>
+                            <th>Mobile No</th>
+                            <th>D.O.B</th>
+                            <th>Action</th>
+                        </tr>
+
+                        <tr ng-repeat="user in UserData">
+                            <td>{{user.emailId}}</td>
+                            <td>{{user.mobile}}</td>
+                            <td>{{user.dob | date}}</td>
+                            <td>
+                              <!--  <button class="btn btn-primary" ng-click="edit(user,$index)">Edit</button> -->
+                                <button class="btn btn-danger" ng-click="remove(user)">delete</button>
+                            </td>
+                        </tr>
+
+                    </table>
+
+</div>

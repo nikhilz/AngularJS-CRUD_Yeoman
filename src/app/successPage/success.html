@@ -1,0 +1,40 @@
+<style>
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>
+<div>
+    <acme-navbar ></acme-navbar>
+</div>
+
+<div>
+    <form name="myForm">
+
+        <div class="container" style="width:50%">
+            <div class="well" ng-show="invalidDetails">
+                All fields are mandatory, please fill the valid details
+            </div>
+
+            <label for="emailId">Email ID: <span class="error" ng-show="myForm.emailId.$error.required" style="color:red"> *</label>
+            <input type="email" class="form-control" name=emailId ng-model="emailId" required>
+            <span class="error" ng-show="myForm.emailId.$error.email">
+        <font color="red">Not valid format!</font>
+        </span><br>
+
+            <label for="mobile">Mobile No:     <span class="error" ng-show="myForm.mobile.$error.required" style="color:red"> *</span></label>
+            <input type="text" ng-required="true" class="form-control" minlength="10" maxlength="10" name="mobile" ng-model="mobile"
+                pattern="^[789][0-9]{9}$">
+            <span class="error" ng-show="myForm.mobile.$error.pattern" style="color:red"> Enter valid mobile number</span>
+
+            <br>
+
+            <label for="dob"> D.O.B <span class="error" ng-show="myForm.dob.$error.required" style="color:red"> *</label>
+            <input type="date" class="form-control" name="dob" ng-model="dob">
+            <br>
+
+            <input type="submit" class="btn btn-success" ng-click="submitDetails()" value="Submit">
+        </div>
+    </form>
+</div>

@@ -1,0 +1,34 @@
+<div>
+    <acme-navbar ></acme-navbar>
+</div>
+
+
+
+
+<div>
+
+
+
+
+    <div class="container" style="width:41%">
+        <div class="well" ng-show="loginError">
+            <font color="red">Username or password entered is wrong!</font>
+        </div>
+        <form class="jumbotron text-center">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" data-ng-model="username"
+                    autocomplete="off" value="asd">
+            </div>
+            <div class="form-group">
+                <label for="passwordplain">Password:</label>
+                <input type="password" class="form-control" id="passwordplain" placeholder="Enter password" name="passwordplain" data-ng-model="passwordplain"
+                    autocomplete="off">
+            </div>
+            <button type="submit" class="btn btn-success" data-ng-click="submitLogin()">Login</button>
+        </form>
+    </div>
+
+
+
+</div>
